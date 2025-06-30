@@ -27,7 +27,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(64, 64, 80, 0.3);
             border-radius: 8px;
-            padding: 2rem 1.5rem;
+            padding: 3rem 2.5rem;
             width: 100%;
             max-width: 400px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -36,12 +36,12 @@
         
         .logo-container {
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .logo-image {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1rem auto;
             display: flex;
             align-items: center;
@@ -50,7 +50,7 @@
         
         .logo-text {
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #FFFFFF;
             margin-bottom: 0.5rem;
             letter-spacing: 1px;
@@ -59,39 +59,37 @@
         
         .login-subtitle {
             color: #A0A0A0;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 400;
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
+            margin-bottom: 2rem;
         }
         
         .input-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
         
         .input-group label {
             display: block;
-            margin-bottom: 0.4rem;
-            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
             font-weight: 500;
             color: #A0A0A0;
         }
         
         .input-group input {
             width: 100%;
-            padding: 0.9rem 0.9rem 0.9rem 2.8rem;
+            padding: 1rem 1rem 1rem 3rem;
             background: rgba(48, 48, 64, 0.3);
             border: 2px solid rgba(48, 48, 64, 0.5);
             border-radius: 4px;
             color: #FFFFFF;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
         
         .input-group input::placeholder {
             color: #707070;
-            font-size: 0.9rem;
         }
         
         .input-group input:focus {
@@ -99,26 +97,36 @@
             background: rgba(48, 48, 64, 0.6);
         }
         
+        .input-group input[type="email"]:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .input-group input[type="password"]:focus {
+            border-color: #FFA500;
+            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.1);
+        }
+        
         .input-icon {
             position: absolute;
             left: 1rem;
-            top: 2.1rem;
+            top: 2.25rem;
             color: #A0A0A0;
             font-size: 1rem;
         }
         
         .login-button {
             width: 100%;
-            padding: 0.9rem;
+            padding: 1rem;
             background: #00E600;
             color: #000000;
             border: none;
             border-radius: 4px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -129,97 +137,118 @@
             box-shadow: 0 4px 8px rgba(0, 230, 0, 0.3);
         }
         
+        .login-button:active {
+            transform: translateY(0);
+        }
+        
+        .login-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
         .forgot-password {
             text-align: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         
         .forgot-password a {
             color: #9932CC;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.875rem;
             font-weight: 500;
             transition: color 0.3s ease;
         }
         
-        .error-message, .success-message {
-            font-size: 0.8rem;
-            padding: 0.6rem 0.9rem;
-            margin-top: 0.8rem;
+        .forgot-password a:hover {
+            color: #B347D9;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #FCA5A5;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .success-message {
+            background: rgba(0, 230, 0, 0.1);
+            border: 1px solid rgba(0, 230, 0, 0.3);
+            color: #90EE90;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid #000000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .account-links {
             text-align: center;
-            padding-top: 1.2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(64, 64, 80, 0.3);
-            margin-top: 1.2rem;
+            margin-top: 1.5rem;
         }
         
         .account-links p {
             color: #A0A0A0;
-            font-size: 0.8rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
         }
         
         .account-links a {
             color: #9932CC;
             text-decoration: none;
             font-weight: 500;
-            margin: 0 0.3rem;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 0.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .account-links a:hover {
+            color: #B347D9;
         }
         
         .risk-warning {
-            background: rgba(0, 0, 0, 0.9);
-            color: #606060;
-            font-size: 0.7rem;
-            padding: 0.8rem 1rem;
-            text-align: center;
-            border-top: 1px solid rgba(64, 64, 80, 0.3);
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: #606060;
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(64, 64, 80, 0.3);
         }
         
         @media (max-width: 480px) {
-            body {
-                padding: 15px;
-                display: block;
-            }
-            
             .login-container {
-                margin: 2rem auto;
-                padding: 1.5rem 1.2rem;
-                max-width: 100%;
-            }
-            
-            .logo-image {
-                width: 65px;
-                height: 65px;
-            }
-            
-            .logo-text {
-                font-size: 1.3rem;
-            }
-            
-            .login-subtitle {
-                font-size: 0.85rem;
+                margin: 1rem;
+                padding: 2rem 1.5rem;
             }
             
             .risk-warning {
                 position: relative;
-                margin-top: 1.5rem;
-                border-radius: 0;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .account-links a {
-                display: block;
-                margin: 0.3rem 0;
+                margin-top: 2rem;
             }
         }
     </style>
@@ -228,10 +257,10 @@
     <div class="login-container">
         <div class="logo-container">
             <div class="logo-image">
-                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="70" height="70" rx="10" fill="black"/>
-                    <path d="M35 20L50 35L35 50L20 35L35 20Z" fill="white"/>
-                    <path d="M35 28L42 35L35 42L28 35L35 28Z" fill="black"/>
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="12" fill="black"/>
+                    <path d="M40 20L60 40L40 60L20 40L40 20Z" fill="white"/>
+                    <path d="M40 30L50 40L40 50L30 40L40 30Z" fill="black"/>
                 </svg>
             </div>
             <div class="logo-text">Renford Sterling</div>
@@ -245,27 +274,27 @@
                 </label>
                 <div class="relative">
                     <i class="fas fa-envelope input-icon"></i>
-                    <input type="email" id="email" placeholder="Ingresa tu email" required>
+                    <input type="email" id="email" placeholder="Email" required>
                 </div>
             </div>
             
             <div class="input-group">
                 <label for="password">
-                    <i class="fas fa-lock mr-2"></i>Contraseña
+                    <i class="fas fa-lock mr-2"></i>Password
                 </label>
                 <div class="relative">
                     <i class="fas fa-lock input-icon"></i>
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
+                    <input type="password" id="password" placeholder="Password" required>
                 </div>
             </div>
             
             <button type="submit" class="login-button" id="loginBtn">
                 <div class="loading-spinner" id="loadingSpinner"></div>
-                <span id="loginBtnText">INICIAR SESIÓN</span>
+                <span id="loginBtnText">LOGIN</span>
             </button>
             
             <div class="forgot-password">
-                <a href="#" onclick="alert('Contacta al administrador para recuperar tu contraseña.')">¿Olvidaste tu contraseña?</a>
+                <a href="#" onclick="alert('Contacta al administrador para recuperar tu contraseña.')">Forgot Password?</a>
             </div>
             
             <div id="errorMessage" class="error-message"></div>
@@ -273,10 +302,9 @@
         </form>
         
         <div class="account-links">
-            <p>¿No tienes una cuenta?</p>
-            <a href="#" onclick="alert('Contacta al administrador para crear una cuenta.')">Abrir Cuenta Demo</a>
-            <span class="text-gray-500">|</span>
-            <a href="#" onclick="alert('Contacta al administrador para crear una cuenta.')">Abrir Cuenta Real</a>
+            <p>Don't have an account?</p>
+            <a href="#" onclick="alert('Contacta al administrador para crear una cuenta.')">Open a Demo Account</a> |
+            <a href="#" onclick="alert('Contacta al administrador para crear una cuenta.')">Open a Real Account</a>
         </div>
     </div>
     
@@ -292,9 +320,10 @@
             
             if (isLoggedIn && loginTime) {
                 const sessionDuration = (new Date() - new Date(loginTime)) / (1000 * 60 * 60);
-                if (sessionDuration <= 24) {
+                if (sessionDuration <= 24) { // 24 horas de sesión válida
                     window.location.href = "dashboard.html";
                 } else {
+                    // Sesión expirada - limpiar
                     localStorage.removeItem('isLoggedIn');
                     localStorage.removeItem('userEmail');
                     localStorage.removeItem('loginTime');
@@ -320,7 +349,7 @@
             // Mostrar estado de carga
             loginBtn.disabled = true;
             loadingSpinner.style.display = "inline-block";
-            loginBtnText.textContent = "VERIFICANDO...";
+            loginBtnText.textContent = "LOGGING IN...";
 
             // Credenciales permitidas
             const allowedCredentials = {
@@ -332,7 +361,7 @@
             setTimeout(() => {
                 if (allowedCredentials[email] && allowedCredentials[email] === password) {
                     // Inicio de sesión exitoso
-                    successMessage.textContent = "¡Acceso concedido! Redirigiendo...";
+                    successMessage.textContent = "Login successful! Redirecting...";
                     successMessage.style.display = "block";
                     
                     // Guardar estado de sesión
@@ -346,13 +375,13 @@
                     }, 1500);
                 } else {
                     // Credenciales inválidas
-                    errorMessage.textContent = "Email o contraseña incorrectos. Por favor verifica tus credenciales.";
+                    errorMessage.textContent = "Invalid email or password. Please check your credentials.";
                     errorMessage.style.display = "block";
                     
                     // Resetear botón
                     loginBtn.disabled = false;
                     loadingSpinner.style.display = "none";
-                    loginBtnText.textContent = "INICIAR SESIÓN";
+                    loginBtnText.textContent = "LOGIN";
                 }
             }, 1000);
         });
