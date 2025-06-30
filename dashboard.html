@@ -42,6 +42,7 @@
                 }
             }
         });
+
         // Función para cerrar sesión
         function logout() {
             localStorage.removeItem('isLoggedIn');
@@ -109,24 +110,28 @@
         ::-webkit-scrollbar-thumb:hover {
             background-color: #60A5FA;
         }
+
         .dark ::-webkit-scrollbar-track {
             background: #1E222D;
         }
         .light ::-webkit-scrollbar-track {
             background: #E5E7EB;
         }
+
         /* Estilos específicos para el título */
         .hero-title span {
             display: inline-block;
             padding: 0 0.15em;
             line-height: 1.1;
         }
+
         @media (max-width: 768px) {
             .hero-title span {
                 display: block;
                 line-height: 1.3 !important;
             }
         }
+
         /* Estilos de gráficos */
         .chartjs-tooltip {
             background: rgba(30, 34, 45, 0.95) !important;
@@ -139,9 +144,11 @@
             color: #111827 !important;
             border: 1px solid #E5E7EB !important;
         }
+
         .chartjs-tooltip-key {
             background-color: #3B82F6 !important;
         }
+
         .circular-chart .circle-bg {
             stroke: #2A2E39;
         }
@@ -159,11 +166,13 @@
              text-anchor: middle;
              dy: 0.3em;
         }
+
         @keyframes circle-fill {
             to {
                 stroke-dasharray: var(--percentage), 100;
             }
         }
+
         /* Estilos de entrada */
         input:focus, select:focus {
             outline: 2px solid transparent;
@@ -174,6 +183,7 @@
         .light input:focus, .light select:focus {
             box-shadow: 0 0 0 2px var(--light-bg), 0 0 0 4px var(--tw-ring-color);
         }
+
         /* Estilos de filas */
         .investor-row {
             cursor: pointer;
@@ -185,6 +195,7 @@
         .light .investor-row:hover {
             background-color: rgba(243, 244, 246, 0.5);
         }
+
         /* Transiciones */
         .transition-colors {
             transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -199,6 +210,7 @@
             height: 300px;
             width: 100%;
         }
+
         /* Modo claro */
         .light body {
             background-color: #F9FAFB;
@@ -276,6 +288,7 @@
             background-color: rgba(245, 158, 11, 0.1);
             color: #F59E0B;
         }
+
         /* Hero section */
         .video-hero {
             position: relative;
@@ -352,11 +365,8 @@
             .video-overlay {
                 background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
             }
-            .hero-content h1 {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
         }
+
         /* Filtros */
         .filter-label {
             display: block;
@@ -433,6 +443,7 @@
         .light .filter-button.reset:hover {
             background-color: #D1D5DB;
         }
+
         /* Scroll horizontal */
         .overflow-x-auto {
             -ms-overflow-style: none;
@@ -441,32 +452,18 @@
         .overflow-x-auto::-webkit-scrollbar {
             display: none;
         }
+
         .flex-nowrap {
             flex-wrap: nowrap;
         }
+
         .hover\:-translate-y-1:hover {
             transform: translateY(-4px);
         }
+
         @media (max-width: 768px) {
             .video-hero {
                 min-height: 85vh;
-            }
-        }
-        /* Responsive: Detalle del inversor */
-        @media (max-width: 768px) {
-            /* Detalle del inversor */
-            #investor-detail .grid-cols-1.lg\:grid-cols-3 {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            #investor-detail .p-6 {
-                padding: 1rem;
-            }
-            .detail-operations-container {
-                overflow-x: auto;
-            }
-            .detail-operations-container table {
-                min-width: 600px;
             }
         }
     </style>
@@ -479,6 +476,7 @@
             <i class="fas fa-sun hidden dark:block text-sm"></i>
         </button>
     </div>
+
     <!-- Barra de navegación con nuevo logo -->
     <nav class="dark:bg-altum-card-bg bg-light-card shadow-lg border-b dark:border-altum-border border-light-border sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -510,32 +508,75 @@
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <!-- Imagen de portada -->
-        <img 
-            src="https://i.imgur.com/3ZTlgM0.jpg" 
-            alt="Renford Sterling" 
+
+    <!-- Hero Section con Video de Fondo -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <!-- Video de fondo -->
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline
             class="absolute inset-0 w-full h-full object-cover"
+            poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
         >
+            <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=165" type="video/mp4">
+            <!-- Fallback para navegadores que no soportan video -->
+            <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                alt="Renford Sterling Financial District" 
+                class="w-full h-full object-cover"
+            >
+        </video>
         
-        <!-- Capa semitransparente -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent"></div>
+        <!-- Capa de overlay profesional -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
         
-        <!-- Contenido centrado -->
-        <div class="relative z-10 text-center px-4 w-full max-w-4xl">
-            <!-- Título principal -->
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-8">
-                RESILIENCIA FINANCIERA EN TIEMPOS DE CONFLICTO
-            </h1>
-            
-            <!-- Badge de desarrollo -->
-            <div class="inline-flex items-center bg-black/70 border border-green-400 text-green-300 px-6 py-3 rounded-full text-sm font-medium tracking-widest">
-                <i class="fas fa-cog fa-spin mr-2"></i>
-                PLATAFORMA EN DESARROLLO
+        <!-- Contenido mejorado -->
+        <div class="relative z-10 text-left px-8 md:px-16 w-full max-w-7xl">
+            <div class="max-w-3xl">
+                <!-- Título principal mejorado -->
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    <span class="block">GESTIÓN DE CAPITAL</span>
+                    <span class="block text-blue-400">DE CLASE MUNDIAL</span>
+                </h1>
+                
+                <!-- Subtítulo profesional -->
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 font-light leading-relaxed">
+                    Maximizamos el potencial de su inversión con estrategias institucionales 
+                    respaldadas por tecnología de vanguardia y análisis profundo del mercado.
+                </p>
+                
+                <!-- Métricas destacadas -->
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-green-400">$2.8B+</div>
+                        <div class="text-sm text-gray-300 uppercase tracking-wide">Activos Bajo Gestión</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-blue-400">15.2%</div>
+                        <div class="text-sm text-gray-300 uppercase tracking-wide">Rendimiento Anual Promedio</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl md:text-3xl font-bold text-yellow-400">850+</div>
+                        <div class="text-sm text-gray-300 uppercase tracking-wide">Inversores Activos</div>
+                    </div>
+                </div>
+                
+                <!-- Badge de desarrollo mejorado -->
+                <div class="inline-flex items-center bg-gradient-to-r from-blue-600/20 to-green-600/20 backdrop-blur-sm border border-blue-400/30 text-blue-300 px-8 py-4 rounded-full text-sm font-medium tracking-widest">
+                    <div class="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></div>
+                    PLATAFORMA EN DESARROLLO CONTINUO
+                </div>
             </div>
         </div>
+        
+        <!-- Indicador de scroll -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+            <i class="fas fa-chevron-down text-xl"></i>
+        </div>
     </section>
+
     <!-- Contenido principal -->
     <main class="container mx-auto px-4 py-8 -mt-4 relative z-10">
         <!-- Filtros y búsqueda -->
@@ -574,20 +615,23 @@
                 <button id="apply-filters" class="filter-button apply">Aplicar</button>
             </div>
         </div>
+
         <!-- Lista de inversores (8 por página) -->
         <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-lg overflow-hidden mb-8 dark:border-altum-border border-light-border">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y dark:divide-altum-border divide-light-border">
                     <thead class="dark:bg-altum-border bg-light-border bg-opacity-50">
                         <tr>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">#</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Inversor</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Balance Actual</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Rendimiento (%)</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Balance Inicial</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Código</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Estado</th>
-                            <th scope="col" class="px-4 py-3 text-left text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Acciones</th>
+                            <th scope="col" class="px-6 py-4 text-left text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">#</th>
+                            <th scope="col" class="px-6 py-4 text-left text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Inversor</th>
+                            <th scope="col" class="px-6 py-4 text-right text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Balance Actual</th>
+                            <th scope="col" class="px-6 py-4 text-right text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Rendimiento (%)</th>
+                            <th scope="col" class="px-6 py-4 text-right text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Balance Inicial</th>
+                            <th scope="col" class="px-6 py-4 text-center text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Código</th>
+                            <th scope="col" class="px-6 py-4 text-center text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Fecha Registro</th>
+                            <th scope="col" class="px-6 py-4 text-center text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Última Actividad</th>
+                            <th scope="col" class="px-6 py-4 text-center text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Estado</th>
+                            <th scope="col" class="px-6 py-4 text-center text-xs font-semibold dark:text-altum-text-secondary text-light-text-secondary uppercase tracking-wider">Acciones</th>
                         </tr>
                     </thead>
                     <tbody class="dark:bg-altum-card-bg bg-light-card divide-y dark:divide-altum-border divide-light-border" id="investors-table">
@@ -606,87 +650,190 @@
                 </div>
             </div>
         </div>
+
         <!-- Sección de Actividad Reciente y Noticias del Mercado -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <!-- Sección de Actividad Reciente -->
-            <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-md p-4 dark:border-altum-border border-light-border">
-                <h3 class="text-base font-medium dark:text-white text-light-text mb-3">Actividad Reciente</h3>
-                
-                <div class="space-y-3">
-                    <!-- Actividad 1 -->
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-altum-accent bg-opacity-20 flex items-center justify-center text-altum-accent mr-2 mt-0.5">
-                            <i class="fas fa-exchange-alt text-xs"></i>
+            <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-lg p-6 dark:border-altum-border border-light-border hover:shadow-xl transition-shadow">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold dark:text-white text-light-text flex items-center">
+                        <div class="w-8 h-8 bg-altum-accent rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-clock text-white text-sm"></i>
                         </div>
-                        <div>
-                            <p class="text-sm dark:text-altum-text-primary text-light-text">Nueva operación ejecutada</p>
-                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Compra en XAUUSD - 25/05/2025</p>
+                        Actividad Reciente
+                    </h3>
+                    <button class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover transition-colors">
+                        Ver Todo <i class="fas fa-chevron-right ml-1"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Actividad 1 - Operación Ejecutada -->
+                    <div class="flex items-start bg-gradient-to-r from-blue-500/10 to-transparent p-4 rounded-lg border-l-4 border-blue-500">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center text-blue-400 mr-4">
+                            <i class="fas fa-exchange-alt text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold dark:text-white text-light-text">Nueva Operación Ejecutada</p>
+                                <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">TRADING</span>
+                            </div>
+                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Compra en XAUUSD - Lote: 0.05</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-xs text-blue-400 font-medium">25/05/2025 14:32</span>
+                                <span class="text-xs text-success">+$127.50</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Actividad 2 -->
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-success bg-opacity-20 flex items-center justify-center text-success mr-2 mt-0.5">
-                            <i class="fas fa-money-bill-wave text-xs"></i>
+                    <!-- Actividad 2 - Depósito -->
+                    <div class="flex items-start bg-gradient-to-r from-green-500/10 to-transparent p-4 rounded-lg border-l-4 border-green-500">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center text-green-400 mr-4">
+                            <i class="fas fa-arrow-down text-sm"></i>
                         </div>
-                        <div>
-                            <p class="text-sm dark:text-altum-text-primary text-light-text">Deposito Realizado</p>
-                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">+ $1250 USD - 20/05/2025</p>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold dark:text-white text-light-text">Depósito Procesado</p>
+                                <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">FUNDS</span>
+                            </div>
+                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Transferencia bancaria confirmada</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-xs text-green-400 font-medium">20/05/2025 09:15</span>
+                                <span class="text-xs text-success font-semibold">+$1,250.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actividad 3 - Análisis de Mercado -->
+                    <div class="flex items-start bg-gradient-to-r from-purple-500/10 to-transparent p-4 rounded-lg border-l-4 border-purple-500">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-500 bg-opacity-20 flex items-center justify-center text-purple-400 mr-4">
+                            <i class="fas fa-chart-line text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <p class="text-sm font-semibold dark:text-white text-light-text">Análisis de Cartera</p>
+                                <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full">ANALYSIS</span>
+                            </div>
+                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Rebalanceo automático ejecutado</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <span class="text-xs text-purple-400 font-medium">18/05/2025 16:45</span>
+                                <span class="text-xs text-altum-accent">Optimizado</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- Sección de Noticias del Mercado -->
-            <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-md p-4 dark:border-altum-border border-light-border">
-                <h3 class="text-base font-medium dark:text-white text-light-text mb-3">Noticias del Mercado</h3>
+            <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-lg p-6 dark:border-altum-border border-light-border hover:shadow-xl transition-shadow">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold dark:text-white text-light-text flex items-center">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-globe text-white text-sm"></i>
+                        </div>
+                        Noticias del Mercado
+                    </h3>
+                    <button class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover transition-colors">
+                        Ver Más <i class="fas fa-external-link-alt ml-1"></i>
+                    </button>
+                </div>
                 
-                <div class="space-y-3">
-                    <!-- Noticia 1 -->
-                    <a href="https://www.forexfactory.com/news/1340695-the-fed-meets-with-uncertainty-permeating-the-air" target="_blank" class="block group hover:dark:bg-altum-dark-bg/50 hover:bg-light-bg/50 p-2 rounded transition-colors">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-0.5 text-altum-accent">
-                                <i class="fas fa-chart-line text-sm"></i>
-                            </div>
-                            <div class="ml-2">
-                                <p class="text-sm font-medium dark:text-white text-light-text group-hover:text-altum-accent">
-La Fed se reúne con incertidumbre que impregna el aire. Esto es lo que debe esperar
-                                </p>
-                                <div class="flex items-center mt-1">
-                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">FRXO</span>
-                                    <span class="mx-2 dark:text-altum-border text-light-border">•</span>
-                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 3h</span>
+                <div class="space-y-4">
+                    <!-- Noticia 1 - Fed -->
+                    <a href="https://www.forexfactory.com/news/1340695-the-fed-meets-with-uncertainty-permeating-the-air" target="_blank" class="block group">
+                        <div class="bg-gradient-to-r from-green-500/10 to-transparent p-4 rounded-lg border-l-4 border-green-500 hover:from-green-500/20 transition-all">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center text-green-400 mr-4">
+                                    <i class="fas fa-chart-line text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full font-medium">FRXO</span>
+                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 3h</span>
+                                    </div>
+                                    <p class="text-sm font-semibold dark:text-white text-light-text group-hover:text-green-400 transition-colors">
+                                        La Fed se reúne con incertidumbre que impregna el aire. Esto es lo que debe esperar
+                                    </p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs text-green-400 mr-2">📈</span>
+                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Impacto: Alto</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </a>
                     
-                    <!-- Noticia 2 -->
-                    <a href="https://www.bbc.com/mundo/articles/c62z2k1qw91o" target="_blank" class="block group hover:dark:bg-altum-dark-bg/50 hover:bg-light-bg/50 p-2 rounded transition-colors">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-0.5 text-red-400">
-                                <i class="fas fa-exclamation-triangle text-sm"></i>
-                            </div>
-                            <div class="ml-2">
-                                <p class="text-sm font-medium dark:text-white text-light-text group-hover:text-altum-accent">
-India lanza un ataque con misiles contra Pakistán y escala las tensiones entre las dos potencias nucleares
-                                </p>
-                                <div class="flex items-center mt-1">
-                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">BBC</span>
-                                    <span class="mx-2 dark:text-altum-border text-light-border">•</span>
-                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 1h</span>
+                    <!-- Noticia 2 - Geopolítica -->
+                    <a href="https://www.bbc.com/mundo/articles/c62z2k1qw91o" target="_blank" class="block group">
+                        <div class="bg-gradient-to-r from-red-500/10 to-transparent p-4 rounded-lg border-l-4 border-red-500 hover:from-red-500/20 transition-all">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center text-red-400 mr-4">
+                                    <i class="fas fa-exclamation-triangle text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded-full font-medium">BBC</span>
+                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 1h</span>
+                                    </div>
+                                    <p class="text-sm font-semibold dark:text-white text-light-text group-hover:text-red-400 transition-colors">
+                                        India lanza un ataque con misiles contra Pakistán y escala las tensiones entre las dos potencias nucleares
+                                    </p>
+                                    <div class="flex items-center mt-2">
+                                        <span class="text-xs text-red-400 mr-2">⚠️</span>
+                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Riesgo Geopolítico</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </a>
+
+                    <!-- Noticia 3 - Mercados -->
+                    <div class="bg-gradient-to-r from-blue-500/10 to-transparent p-4 rounded-lg border-l-4 border-blue-500">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center text-blue-400 mr-4">
+                                <i class="fas fa-coins text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full font-medium">REUTERS</span>
+                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 2h</span>
+                                </div>
+                                <p class="text-sm font-semibold dark:text-white text-light-text">
+                                    Oro alcanza máximos históricos ante incertidumbre global y debilidad del dólar
+                                </p>
+                                <div class="flex items-center mt-2">
+                                    <span class="text-xs text-blue-400 mr-2">🥇</span>
+                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Commodities</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="mt-3 text-center">
-                    <a href="#" class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover">
-                        Ver más noticias <i class="fas fa-chevron-right ml-1"></i>
-                    </a>
+                <div class="mt-6 pt-4 border-t dark:border-altum-border border-light-border">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4 text-xs dark:text-altum-text-secondary text-light-text-secondary">
+                            <span class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
+                                Positivo
+                            </span>
+                            <span class="flex items-center">
+                                <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
+                                Riesgo
+                            </span>
+                            <span class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-1"></div>
+                                Neutral
+                            </span>
+                        </div>
+                        <a href="#" class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover transition-colors">
+                            Centro de Noticias <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
         <!-- Detalle del inversor -->
         <div id="investor-detail" class="hidden dark:bg-altum-card-bg bg-light-card rounded-lg shadow-xl overflow-hidden mb-8 dark:border-altum-border border-light-border">
             <!-- Encabezado del detalle -->
@@ -696,57 +843,180 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                     <i class="fas fa-times"></i>
                 </button>
             </div>
+
             <!-- Contenido del detalle -->
             <div class="p-6">
-                <!-- Resumen rápido -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                    <!-- Balance -->
-                    <div class="dark:bg-altum-dark-bg bg-light-bg rounded-lg shadow-md p-5 dark:border-altum-border border-light-border hover:border-altum-accent/50 transition-colors">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-base font-medium dark:text-altum-text-secondary text-light-text-secondary">Balance Total</h3>
-                            <i class="fas fa-wallet text-altum-accent text-lg"></i>
-                        </div>
-                        <p class="text-3xl font-semibold dark:text-white text-light-text mb-1" id="detail-balance">$0.00</p>
-                        <div class="flex items-center text-sm text-success" id="detail-balance-change">
-                            <i class="fas fa-arrow-up mr-1"></i>
-                            <span>+0% este mes</span>
+                <!-- Resumen Ejecutivo -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold dark:text-white text-light-text flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-r from-altum-accent to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-bar text-white text-lg"></i>
+                            </div>
+                            Resumen Ejecutivo
+                        </h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs bg-altum-accent/20 text-altum-accent px-2 py-1 rounded-full font-medium">ACTIVO</span>
+                            <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Última actualización: Hoy</span>
                         </div>
                     </div>
-                    <!-- Rendimiento -->
-                    <div class="dark:bg-altum-dark-bg bg-light-bg rounded-lg shadow-md p-5 dark:border-altum-border border-light-border hover:border-altum-accent/50 transition-colors">
-                        <div class="flex justify-between items-center mb-3">
-                            <h3 class="text-base font-medium dark:text-altum-text-secondary text-light-text-secondary">Rendimiento</h3>
-                            <i class="fas fa-chart-pie text-altum-accent text-lg"></i>
+
+                    <!-- Métricas principales en grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+                        <!-- Balance Total -->
+                        <div class="bg-gradient-to-br from-green-500/10 to-green-600/5 rounded-xl shadow-lg p-6 border border-green-500/20 hover:shadow-xl transition-all">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-wallet text-green-400 text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-green-400 font-medium">BALANCE TOTAL</p>
+                                    <p class="text-2xl font-bold dark:text-white text-light-text" id="detail-balance">$0.00</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center text-sm text-green-400" id="detail-balance-change">
+                                    <i class="fas fa-arrow-up mr-1"></i>
+                                    <span>+0% este mes</span>
+                                </div>
+                                <div class="w-16 h-2 bg-green-500/20 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-3xl font-semibold dark:text-white text-light-text" id="detail-performance">0%</p>
-                        <div class="mt-3">
-                            <div class="w-full dark:bg-altum-border bg-light-border rounded-full h-2">
-                                <div class="bg-altum-accent h-2 rounded-full" id="detail-performance-bar" style="width: 0%"></div>
+
+                        <!-- Rendimiento -->
+                        <div class="bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-xl shadow-lg p-6 border border-blue-500/20 hover:shadow-xl transition-all">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-blue-400 text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-blue-400 font-medium">RENDIMIENTO</p>
+                                    <p class="text-2xl font-bold dark:text-white text-light-text" id="detail-performance">0%</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Anualizado</span>
+                                <div class="w-16 h-2 bg-blue-500/20 rounded-full">
+                                    <div class="h-2 bg-blue-500 rounded-full" id="detail-performance-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exposición al Riesgo -->
+                        <div class="bg-gradient-to-br from-purple-500/10 to-purple-600/5 rounded-xl shadow-lg p-6 border border-purple-500/20 hover:shadow-xl transition-all">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-purple-400 text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-purple-400 font-medium">RIESGO</p>
+                                    <p class="text-2xl font-bold dark:text-white text-light-text" id="detail-risk-level">BAJO</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Nivel de exposición</span>
+                                <div class="w-16 h-2 bg-purple-500/20 rounded-full">
+                                    <div class="h-2 bg-purple-500 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actividad -->
+                        <div class="bg-gradient-to-br from-orange-500/10 to-orange-600/5 rounded-xl shadow-lg p-6 border border-orange-500/20 hover:shadow-xl transition-all">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-activity text-orange-400 text-xl"></i>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-xs text-orange-400 font-medium">OPERACIONES</p>
+                                    <p class="text-2xl font-bold dark:text-white text-light-text" id="detail-operations-count">0</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Este mes</span>
+                                <div class="w-16 h-2 bg-orange-500/20 rounded-full">
+                                    <div class="h-2 bg-orange-500 rounded-full" style="width: 60%"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Estado de cuenta -->
-                    <div class="dark:bg-altum-dark-bg bg-light-bg rounded-lg shadow-md p-5 dark:border-altum-border border-light-border hover:border-altum-accent/50 transition-colors">
-                        <div class="flex justify-between items-center mb-4">
-                             <h3 class="text-base font-medium dark:text-altum-text-secondary text-light-text-secondary">Estado de Cuenta</h3>
-                             <i class="fas fa-check-circle text-altum-accent text-lg"></i>
-                        </div>
-                        <div class="flex items-center mb-3" id="detail-status">
-                             <span class="status-badge status-low">Activa</span>
-                             <span class="ml-2 dark:text-altum-text-secondary text-light-text-secondary text-xs">Riesgo: Bajo</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Depósitos</p>
-                                <p class="font-semibold dark:text-white text-light-text text-sm" id="detail-deposits">0</p>
+
+                    <!-- Distribución de Cartera y Gráfico de Crecimiento -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        <!-- Distribución de Cartera -->
+                        <div class="dark:bg-altum-dark-bg bg-light-bg rounded-xl shadow-lg p-6 dark:border-altum-border border-light-border">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-lg font-semibold dark:text-white text-light-text">Distribución de Cartera</h4>
+                                <button class="text-xs text-altum-accent hover:text-altum-accent-hover">Ver Detalle</button>
                             </div>
-                            <div>
-                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Retiros</p>
-                                <p class="font-semibold dark:text-white text-light-text text-sm" id="detail-withdrawals">0</p>
+                            <div class="relative">
+                                <canvas id="portfolio-chart" width="300" height="300"></canvas>
+                                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div class="text-center">
+                                        <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Total Invertido</p>
+                                        <p class="text-lg font-bold dark:text-white text-light-text" id="total-invested">$0.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 space-y-2">
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                                        <span class="dark:text-altum-text-secondary text-light-text-secondary">Forex</span>
+                                    </div>
+                                    <span class="font-semibold dark:text-white text-light-text">65%</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                                        <span class="dark:text-altum-text-secondary text-light-text-secondary">Commodities</span>
+                                    </div>
+                                    <span class="font-semibold dark:text-white text-light-text">25%</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center">
+                                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                                        <span class="dark:text-altum-text-secondary text-light-text-secondary">Índices</span>
+                                    </div>
+                                    <span class="font-semibold dark:text-white text-light-text">10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico de Crecimiento Mejorado -->
+                        <div class="dark:bg-altum-dark-bg bg-light-bg rounded-xl shadow-lg p-6 dark:border-altum-border border-light-border">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-lg font-semibold dark:text-white text-light-text">Evolución del Capital</h4>
+                                <div class="flex space-x-2">
+                                    <button class="px-3 py-1 bg-altum-accent text-white rounded-md text-xs font-medium hover:bg-altum-accent-hover transition-colors" data-range="1M">1M</button>
+                                    <button class="px-3 py-1 dark:bg-altum-card-bg bg-light-card dark:border-altum-border border-light-border rounded-md text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary hover:dark:bg-altum-border hover:bg-light-border transition-colors" data-range="3M">3M</button>
+                                    <button class="px-3 py-1 dark:bg-altum-card-bg bg-light-card dark:border-altum-border border-light-border rounded-md text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary hover:dark:bg-altum-border hover:bg-light-border transition-colors" data-range="6M">6M</button>
+                                    <button class="px-3 py-1 dark:bg-altum-card-bg bg-light-card dark:border-altum-border border-light-border rounded-md text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary hover:dark:bg-altum-border hover:bg-light-border transition-colors" data-range="1A">1A</button>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="growth-chart" width="400" height="300"></canvas>
+                            </div>
+                            <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Capital Inicial</p>
+                                    <p class="text-sm font-semibold dark:text-white text-light-text" id="initial-capital">$0.00</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Capital Actual</p>
+                                    <p class="text-sm font-semibold text-green-400" id="current-capital">$0.00</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Ganancia Neta</p>
+                                    <p class="text-sm font-semibold text-altum-accent" id="net-gain">$0.00</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Sección de operaciones -->
                 <div class="dark:bg-altum-dark-bg bg-light-bg rounded-lg shadow-md overflow-hidden mb-8 dark:border-altum-border border-light-border">
                     <div class="border-b dark:border-altum-border border-light-border px-6 py-4 flex justify-between items-center">
@@ -757,7 +1027,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                             <button class="px-3 py-1 dark:bg-altum-card-bg bg-light-card dark:border-altum-border border-light-border rounded-md text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary hover:dark:bg-altum-border hover:bg-light-border transition-colors">Mes</button>
                         </div>
                     </div>
-                    <div class="detail-operations-container">
+                    <div class="overflow-x-auto">
                          <table class="min-w-full divide-y dark:divide-altum-border divide-light-border">
                             <thead class="dark:bg-altum-border bg-light-border bg-opacity-30">
                                 <tr>
@@ -790,6 +1060,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                         </div>
                     </div>
                 </div>
+
                  <!-- Sección de métricas -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <!-- Lote máximo -->
@@ -809,6 +1080,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                             </div>
                         </div>
                     </div>
+
                     <!-- Actividad reciente -->
                      <div class="dark:bg-altum-dark-bg bg-light-bg rounded-lg shadow-md p-6 dark:border-altum-border border-light-border hover:border-altum-accent/50 transition-colors">
                         <h4 class="text-base font-medium dark:text-altum-text-secondary text-light-text-secondary mb-5">Actividad Reciente</h4>
@@ -834,6 +1106,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                         </div>
                     </div>
                 </div>
+
                 <!-- Gráfico de crecimiento mejorado -->
                 <div class="dark:bg-altum-dark-bg bg-light-bg rounded-lg shadow-md p-6 mb-8 dark:border-altum-border border-light-border hover:border-altum-accent/50 transition-colors">
                     <div class="flex justify-between items-center mb-4">
@@ -849,6 +1122,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                         <canvas id="growth-chart"></canvas>
                     </div>
                 </div>
+
                 <!-- Advertencia de riesgo -->
                 <div class="bg-yellow-900 bg-opacity-30 border-l-4 border-warning p-4 rounded-md">
                     <div class="flex">
@@ -865,6 +1139,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
             </div>
         </div>
     </main>
+
     <!-- Pie de página -->
     <footer class="dark:bg-altum-card-bg bg-light-card dark:text-altum-text-secondary text-light-text-secondary border-t dark:border-altum-border border-light-border py-10">
         <div class="container mx-auto px-4">
@@ -904,6 +1179,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
             </div>
         </div>
     </footer>
+
     <!-- JavaScript -->
     <script>
         // Datos de todos los inversores
@@ -922,6 +1198,8 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maxLot: 0.7,
                 performance: 33.02,
                 balanceChange: "+3.2% este mes",
+                registrationDate: "2023-08-15",
+                lastActivity: "2025-06-28",
                 operations: [
                     { date: "05/23/2025", operation: "Compra", session: "New York", open: 1.13285, close: 1.13552, result: "Take Profit", observation: "EUR/USD" },
                     { date: "05/20/2025", operation: "Compra", session: "New York", open: 134.95, result: "Abierta largo plazo", observation: "Operación sumada en las cuentas con el take profit parcial" },
@@ -932,7 +1210,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                     '3M': [10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 18601],
                     '6M': [8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 18601],
                     '1A': [5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 18601]
-            }
+                }
             },
             // Inversor 2 (Esfranco)
             {
@@ -948,6 +1226,8 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maxLot: 0.3,
                 performance: 12.01,
                 balanceChange: "+12.01% este mes",
+                registrationDate: "2024-01-22",
+                lastActivity: "2025-06-29",
                 operations: [
                     { date: "04/14/2025", operation: "Compra", session: "New York", open: 1.13679, close: 1.14033, result: "Take Profit", observation: "Take profit en medio de un rango con bastante indecisión y incertidumbre" },
                     { date: "04/07/2025", operation: "Venta", session: "New York", open: 1.09673, close: 1.09465, result: "Take Profit", observation: "Operación sumada en las cuentas con el take profit parcial" },
@@ -974,6 +1254,8 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maxLot: 0.15,
                 performance: 9.32,
                 balanceChange: "+2.5% este mes",
+                registrationDate: "2024-03-10",
+                lastActivity: "2025-06-25",
                 operations: [
                     { 
                         date: "10/04/2025", 
@@ -1008,6 +1290,8 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maxLot: 0.03,
                 performance: 4.11,
                 balanceChange: "+4.11% este mes",
+                registrationDate: "2024-07-18",
+                lastActivity: "2025-06-20",
                 operations: [
                     {
                         date: "02/04/2025",
@@ -1040,6 +1324,8 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maxLot: 0.06,
                 performance: 3.35,
                 balanceChange: "+3.35% en junio",
+                registrationDate: "2023-11-05",
+                lastActivity: "2025-06-24",
                 operations: [
                     {
                         date: "24/06/2025",
@@ -1081,6 +1367,8 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maxLot: 0.03,
                 performance: 18.71,
                 balanceChange: "+3.1% este mes",
+                registrationDate: "2024-02-14",
+                lastActivity: "2025-06-27",
                 operations: [
                     {
                         date: "04/04/2025",
@@ -1191,12 +1479,14 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 }
             }
         ];
+
         // Variables para paginación
         let currentPage = 1;
         const investorsPerPage = 8;
         let filteredInvestors = [...investorsData];
         let growthChart = null;
         let currentTimeRange = '1M';
+
         // Función para formatear números como USD
         function formatUSD(amount) {
             return '$' + amount.toLocaleString('en-US', {
@@ -1204,6 +1494,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 maximumFractionDigits: 2
             });
         }
+
         // Función para obtener el texto de estado
         function getStatusText(status) {
             const statusMap = {
@@ -1213,6 +1504,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
             };
             return statusMap[status] || status;
         }
+
         // Función para renderizar la tabla de inversores
         function renderInvestorsTable() {
             const tableBody = document.getElementById('investors-table');
@@ -1233,20 +1525,46 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 const statusClass = `status-${investor.status}`;
                 
                 row.innerHTML = `
-                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium dark:text-altum-text-primary text-light-text">${i + 1}</td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium dark:text-white text-light-text">${investor.username}</td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm font-semibold dark:text-white text-light-text">${formatUSD(investor.balance)}</td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm font-medium ${performanceClass}">
-                        <i class="fas ${performanceIcon} mr-1"></i> ${investor.performance}%
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-altum-text-primary text-light-text">${i + 1}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8 bg-altum-accent rounded-full flex items-center justify-center text-white text-xs font-semibold">
+                                ${investor.username.charAt(0).toUpperCase()}
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-sm font-semibold dark:text-white text-light-text">${investor.username}</div>
+                                <div class="text-xs dark:text-altum-text-secondary text-light-text-secondary">ID: ${investor.id}</div>
+                            </div>
+                        </div>
                     </td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm font-semibold dark:text-white text-light-text">${formatUSD(investor.initialBalance)}</td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm dark:text-altum-text-secondary text-light-text-secondary">${investor.code}</td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm">
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-bold dark:text-white text-light-text">${formatUSD(investor.balance)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-semibold ${performanceClass}">
+                        <div class="flex items-center justify-end">
+                            <i class="fas ${performanceIcon} mr-2"></i>
+                            <span>${investor.performance}%</span>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium dark:text-altum-text-secondary text-light-text-secondary">${formatUSD(investor.initialBalance)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-center">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                            ${investor.code}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-center text-sm dark:text-altum-text-secondary text-light-text-secondary">
+                        <div class="text-sm font-medium">${new Date(investor.registrationDate).toLocaleDateString('es-ES')}</div>
+                        <div class="text-xs text-gray-500">${Math.floor((new Date() - new Date(investor.registrationDate)) / (1000 * 60 * 60 * 24))} días</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-center text-sm dark:text-altum-text-secondary text-light-text-secondary">
+                        <div class="text-sm font-medium">${new Date(investor.lastActivity).toLocaleDateString('es-ES')}</div>
+                        <div class="text-xs text-gray-500">hace ${Math.floor((new Date() - new Date(investor.lastActivity)) / (1000 * 60 * 60 * 24))} días</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-center text-sm">
                         <span class="status-badge ${statusClass}">${getStatusText(investor.status)}</span>
                     </td>
-                    <td class="px-4 py-4 whitespace-nowrap text-sm dark:text-altum-text-secondary text-light-text-secondary">
-                        <button class="text-altum-accent hover:text-altum-accent-hover view-detail transition-colors font-medium" data-id="${investor.id}">
-                            <i class="fas fa-eye mr-1 text-xs"></i> Ver
+                    <td class="px-6 py-4 whitespace-nowrap text-center text-sm">
+                        <button class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-altum-accent hover:bg-altum-accent-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-altum-accent transition-colors view-detail" data-id="${investor.id}">
+                            <i class="fas fa-eye mr-1.5"></i>
+                            Ver Detalle
                         </button>
                     </td>
                 `;
@@ -1278,6 +1596,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 });
             });
         }
+
         // Función para filtrar inversores
         function filterInvestors() {
             const searchTerm = document.getElementById('search-investor').value.toLowerCase();
@@ -1309,6 +1628,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
             currentPage = 1;
             renderInvestorsTable();
         }
+
         // Función para crear/actualizar el gráfico
         function updateGrowthChart(chartData, labels) {
             const ctx = document.getElementById('growth-chart').getContext('2d');
@@ -1387,10 +1707,12 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 }
             });
         }
+
         // Función para mostrar el detalle de un inversor
         function showInvestorDetail(investorId) {
             const investor = investorsData.find(i => i.id === investorId);
             if (!investor) return;
+
             // Actualizar información básica
             document.getElementById('detail-investor-name').textContent = `Detalle: ${investor.username}`;
             document.getElementById('detail-balance').textContent = formatUSD(investor.balance);
@@ -1402,6 +1724,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 <span>${investor.balanceChange}</span>
             `;
             balanceChangeEl.className = `flex items-center text-sm ${isPositiveChange ? 'text-success' : 'text-danger'}`;
+
             document.getElementById('detail-performance').textContent = `${investor.performance}%`;
             document.getElementById('detail-performance-bar').style.width = `${investor.performance}%`;
             
@@ -1416,9 +1739,11 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
             document.getElementById('detail-deposits').textContent = investor.deposits;
             document.getElementById('detail-withdrawals').textContent = investor.withdrawals;
             document.getElementById('detail-max-lot').textContent = investor.maxLot;
+
             // Renderizar operaciones
             const operationsTable = document.getElementById('detail-operations');
             operationsTable.innerHTML = '';
+
             if (investor.operations && investor.operations.length > 0) {
                 investor.operations.forEach(op => {
                     const row = document.createElement('tr');
@@ -1437,6 +1762,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                             ? 'bg-green-900 bg-opacity-40 text-green-300' 
                             : 'bg-red-900 bg-opacity-40 text-red-300';
                     }
+
                     row.innerHTML = `
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium dark:text-altum-text-primary text-light-text">${op.date}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm">
@@ -1451,8 +1777,10 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                     operationsTable.appendChild(row);
                 });
             }
+
             // Actualizar el gráfico de crecimiento
             updateChartForTimeRange(currentTimeRange, investor);
+
             // Ajustar el círculo de progreso del lote máximo
             const percentage = Math.min(100, Math.max(0, (investor.maxLot / 1.0) * 100));
             const circle = document.querySelector('#investor-detail .circle');
@@ -1461,10 +1789,15 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 circle.style.setProperty('--percentage', percentage.toString());
                 circleText.textContent = `${percentage.toFixed(0)}%`;
             }
+
             // Mostrar el panel de detalle
             document.getElementById('investor-detail').classList.remove('hidden');
             document.getElementById('investor-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Actualizar gráficos mejorados
+            updateInvestorCharts(investor);
         }
+
         // Función para actualizar el gráfico según el rango de tiempo seleccionado
         function updateChartForTimeRange(timeRange, investor) {
             currentTimeRange = timeRange;
@@ -1498,6 +1831,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
             
             updateGrowthChart(data, labels);
         }
+
         // Función para cambiar entre modo claro y oscuro
         function toggleTheme() {
             const html = document.documentElement;
@@ -1521,6 +1855,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 }
             }
         }
+
         // Event listeners
         document.addEventListener('DOMContentLoaded', () => {
             // Verificar preferencia de tema guardada
@@ -1529,8 +1864,10 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 document.documentElement.classList.add('light');
                 document.documentElement.classList.remove('dark');
             }
+
             // Renderizar tabla inicial
             renderInvestorsTable();
+
             // Manejar búsqueda y filtros
             document.getElementById('search-investor').addEventListener('input', filterInvestors);
             document.getElementById('filter-status').addEventListener('change', filterInvestors);
@@ -1542,6 +1879,7 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                 document.getElementById('filter-balance').value = 'all';
                 filterInvestors();
             });
+
             // Manejar paginación
             document.getElementById('prev-page').addEventListener('click', () => {
                 if (currentPage > 1) {
@@ -1557,11 +1895,13 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                     renderInvestorsTable();
                 }
             });
+
             // Manejar clic en cerrar detalle
             document.getElementById('close-detail').addEventListener('click', () => {
                 document.getElementById('investor-detail').classList.add('hidden');
             });
-            // Manejar clics en botones de rango de tiempo del gráfico
+
+             // Manejar clics en botones de rango de tiempo del gráfico
             document.querySelectorAll('#investor-detail .chart-container + div button').forEach(button => {
                 button.addEventListener('click', function() {
                     // Actualizar estilos de los botones
@@ -1584,9 +1924,225 @@ India lanza un ataque con misiles contra Pakistán y escala las tensiones entre 
                     }
                 });
             });
+
             // Manejar cambio de tema
             document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
         });
+
+        // Variables globales para los gráficos
+        let portfolioChart = null;
+        let growthChart = null;
+
+        // Función para crear el gráfico de distribución de cartera
+        function createPortfolioChart(investor) {
+            const ctx = document.getElementById('portfolio-chart');
+            if (!ctx) return;
+
+            // Destruir gráfico existente si existe
+            if (portfolioChart) {
+                portfolioChart.destroy();
+            }
+
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#E5E7EB' : '#374151';
+
+            // Datos de ejemplo para la distribución de cartera
+            const portfolioData = {
+                labels: ['Forex', 'Commodities', 'Índices'],
+                datasets: [{
+                    data: [65, 25, 10],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(34, 197, 94, 0.8)',
+                        'rgba(168, 85, 247, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgb(59, 130, 246)',
+                        'rgb(34, 197, 94)',
+                        'rgb(168, 85, 247)'
+                    ],
+                    borderWidth: 2,
+                    hoverOffset: 10
+                }]
+            };
+
+            portfolioChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: portfolioData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: isDark ? 'rgba(30, 34, 45, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                            titleColor: textColor,
+                            bodyColor: textColor,
+                            borderColor: isDark ? '#374151' : '#E5E7EB',
+                            borderWidth: 1,
+                            padding: 12,
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return `${label}: ${percentage}% (${formatUSD(investor.balance * value / 100)})`;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateRotate: true,
+                        duration: 1000
+                    }
+                }
+            });
+
+            // Actualizar el total invertido
+            document.getElementById('total-invested').textContent = formatUSD(investor.balance);
+        }
+
+        // Función para crear el gráfico de crecimiento mejorado
+        function createGrowthChart(investor) {
+            const ctx = document.getElementById('growth-chart');
+            if (!ctx) return;
+
+            // Destruir gráfico existente si existe
+            if (growthChart) {
+                growthChart.destroy();
+            }
+
+            const isDark = document.documentElement.classList.contains('dark');
+            const gridColor = isDark ? 'rgba(75, 85, 99, 0.3)' : 'rgba(209, 213, 219, 0.3)';
+            const labelColor = isDark ? '#9CA3AF' : '#6B7280';
+
+            // Generar datos de crecimiento simulados más realistas
+            const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
+            const growthData = [];
+            let currentValue = investor.initialBalance;
+            
+            months.forEach((month, index) => {
+                // Simular crecimiento con variabilidad realista
+                const growthRate = (investor.performance / 100) / 12; // Rendimiento mensual
+                const volatility = (Math.random() - 0.5) * 0.02; // ±1% de volatilidad
+                currentValue = currentValue * (1 + growthRate + volatility);
+                growthData.push(Math.round(currentValue));
+            });
+
+            growthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: months,
+                    datasets: [{
+                        label: 'Capital',
+                        data: growthData,
+                        borderColor: 'rgb(59, 130, 246)',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: 'rgb(59, 130, 246)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(59, 130, 246)',
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: isDark ? 'rgba(30, 34, 45, 0.95)' : 'rgba(255, 255, 255, 0.95)',
+                            titleColor: isDark ? '#E5E7EB' : '#111827',
+                            bodyColor: isDark ? '#E5E7EB' : '#111827',
+                            borderColor: gridColor,
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: false,
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.parsed.y;
+                                    const change = value - investor.initialBalance;
+                                    const changePercent = ((change / investor.initialBalance) * 100).toFixed(2);
+                                    return [
+                                        `Capital: ${formatUSD(value)}`,
+                                        `Cambio: ${formatUSD(change)} (${changePercent}%)`
+                                    ];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            grid: { 
+                                color: gridColor, 
+                                drawBorder: false,
+                                lineWidth: 1
+                            },
+                            ticks: {
+                                color: labelColor,
+                                padding: 10,
+                                callback: function(value) {
+                                    if (value >= 10000) return '$' + (value/1000).toFixed(0) + 'k';
+                                    return formatUSD(value);
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { 
+                                display: false, 
+                                drawBorder: false 
+                            },
+                            ticks: { 
+                                color: labelColor, 
+                                padding: 10 
+                            }
+                        }
+                    },
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeInOutQuart'
+                    }
+                }
+            });
+
+            // Actualizar métricas del gráfico
+            document.getElementById('initial-capital').textContent = formatUSD(investor.initialBalance);
+            document.getElementById('current-capital').textContent = formatUSD(investor.balance);
+            const netGain = investor.balance - investor.initialBalance;
+            document.getElementById('net-gain').textContent = formatUSD(netGain);
+        }
+
+        // Función para actualizar gráficos cuando se selecciona un inversor
+        function updateInvestorCharts(investor) {
+            // Actualizar métricas del resumen ejecutivo
+            document.getElementById('detail-operations-count').textContent = investor.operations ? investor.operations.length : 0;
+            
+            // Crear gráficos
+            setTimeout(() => {
+                createPortfolioChart(investor);
+                createGrowthChart(investor);
+            }, 100);
+        }
+
+        // Función para manejar cambios de rango de tiempo
+        function updateChartForTimeRange(range, investor) {
+            // Esta función se puede expandir para mostrar diferentes rangos de tiempo
+            console.log(`Actualizando gráfico para rango: ${range}`);
+            createGrowthChart(investor);
+        }
     </script>
 </body>
 </html>
