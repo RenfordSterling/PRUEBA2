@@ -651,184 +651,139 @@
             </div>
         </div>
 
-        <!-- Sección de Actividad Reciente y Noticias del Mercado -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <!-- Sección de Actividad Reciente -->
-            <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-lg p-6 dark:border-altum-border border-light-border hover:shadow-xl transition-shadow">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg font-semibold dark:text-white text-light-text flex items-center">
-                        <div class="w-8 h-8 bg-altum-accent rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-clock text-white text-sm"></i>
-                        </div>
-                        Actividad Reciente
-                    </h3>
-                    <button class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover transition-colors">
-                        Ver Todo <i class="fas fa-chevron-right ml-1"></i>
-                    </button>
-                </div>
+        <!-- Sección de Información del Mercado - Rediseño Profesional -->
+        <div class="mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 
-                <div class="space-y-4">
-                    <!-- Actividad 1 - Operación Ejecutada -->
-                    <div class="flex items-start bg-gradient-to-r from-blue-500/10 to-transparent p-4 rounded-lg border-l-4 border-blue-500">
-                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center text-blue-400 mr-4">
-                            <i class="fas fa-exchange-alt text-sm"></i>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between">
-                                <p class="text-sm font-semibold dark:text-white text-light-text">Nueva Operación Ejecutada</p>
-                                <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full">TRADING</span>
-                            </div>
-                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Compra en XAUUSD - Lote: 0.05</p>
-                            <div class="flex items-center justify-between mt-2">
-                                <span class="text-xs text-blue-400 font-medium">25/05/2025 14:32</span>
-                                <span class="text-xs text-success">+$127.50</span>
-                            </div>
-                        </div>
+                <!-- Actividad Reciente - Rediseñada -->
+                <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-md p-6 dark:border-altum-border border-light-border">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-semibold dark:text-white text-light-text">Actividad Reciente</h3>
+                        <button class="text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary hover:text-altum-accent transition-colors">
+                            Ver Todo
+                        </button>
                     </div>
                     
-                    <!-- Actividad 2 - Depósito -->
-                    <div class="flex items-start bg-gradient-to-r from-green-500/10 to-transparent p-4 rounded-lg border-l-4 border-green-500">
-                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center text-green-400 mr-4">
-                            <i class="fas fa-arrow-down text-sm"></i>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between">
-                                <p class="text-sm font-semibold dark:text-white text-light-text">Depósito Procesado</p>
-                                <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full">FUNDS</span>
+                    <div class="space-y-4">
+                        <!-- Actividad 1 -->
+                        <div class="flex items-start p-3 rounded-lg dark:bg-altum-dark-bg bg-light-bg border dark:border-altum-border border-light-border">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full dark:bg-altum-border bg-light-border flex items-center justify-center mr-3">
+                                <i class="fas fa-exchange-alt text-xs dark:text-altum-text-secondary text-light-text-secondary"></i>
                             </div>
-                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Transferencia bancaria confirmada</p>
-                            <div class="flex items-center justify-between mt-2">
-                                <span class="text-xs text-green-400 font-medium">20/05/2025 09:15</span>
-                                <span class="text-xs text-success font-semibold">+$1,250.00</span>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium dark:text-white text-light-text">Nueva Operación</p>
+                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">XAUUSD - Lote: 0.05</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">25/05/2025</span>
+                                    <span class="text-xs font-medium text-success">+$127.50</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Actividad 3 - Análisis de Mercado -->
-                    <div class="flex items-start bg-gradient-to-r from-purple-500/10 to-transparent p-4 rounded-lg border-l-4 border-purple-500">
-                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-500 bg-opacity-20 flex items-center justify-center text-purple-400 mr-4">
-                            <i class="fas fa-chart-line text-sm"></i>
-                        </div>
-                        <div class="flex-1">
-                            <div class="flex items-center justify-between">
-                                <p class="text-sm font-semibold dark:text-white text-light-text">Análisis de Cartera</p>
-                                <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded-full">ANALYSIS</span>
+                        
+                        <!-- Actividad 2 -->
+                        <div class="flex items-start p-3 rounded-lg dark:bg-altum-dark-bg bg-light-bg border dark:border-altum-border border-light-border">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full dark:bg-altum-border bg-light-border flex items-center justify-center mr-3">
+                                <i class="fas fa-arrow-down text-xs dark:text-altum-text-secondary text-light-text-secondary"></i>
                             </div>
-                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Rebalanceo automático ejecutado</p>
-                            <div class="flex items-center justify-between mt-2">
-                                <span class="text-xs text-purple-400 font-medium">18/05/2025 16:45</span>
-                                <span class="text-xs text-altum-accent">Optimizado</span>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium dark:text-white text-light-text">Depósito Procesado</p>
+                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Transferencia bancaria</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">20/05/2025</span>
+                                    <span class="text-xs font-medium text-success">+$1,250.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Actividad 3 -->
+                        <div class="flex items-start p-3 rounded-lg dark:bg-altum-dark-bg bg-light-bg border dark:border-altum-border border-light-border">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full dark:bg-altum-border bg-light-border flex items-center justify-center mr-3">
+                                <i class="fas fa-chart-line text-xs dark:text-altum-text-secondary text-light-text-secondary"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium dark:text-white text-light-text">Análisis de Cartera</p>
+                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary mt-1">Rebalanceo ejecutado</p>
+                                <div class="flex items-center justify-between mt-2">
+                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">18/05/2025</span>
+                                    <span class="text-xs font-medium text-altum-accent">Optimizado</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Sección de Noticias del Mercado -->
-            <div class="dark:bg-altum-card-bg bg-light-card rounded-lg shadow-lg p-6 dark:border-altum-border border-light-border hover:shadow-xl transition-shadow">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg font-semibold dark:text-white text-light-text flex items-center">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
-                            <i class="fas fa-globe text-white text-sm"></i>
-                        </div>
-                        Noticias del Mercado
-                    </h3>
-                    <button class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover transition-colors">
-                        Ver Más <i class="fas fa-external-link-alt ml-1"></i>
-                    </button>
-                </div>
-                
-                <div class="space-y-4">
-                    <!-- Noticia 1 - Fed -->
-                    <a href="https://www.forexfactory.com/news/1340695-the-fed-meets-with-uncertainty-permeating-the-air" target="_blank" class="block group">
-                        <div class="bg-gradient-to-r from-green-500/10 to-transparent p-4 rounded-lg border-l-4 border-green-500 hover:from-green-500/20 transition-all">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center text-green-400 mr-4">
-                                    <i class="fas fa-chart-line text-sm"></i>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded-full font-medium">FRXO</span>
-                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 3h</span>
-                                    </div>
-                                    <p class="text-sm font-semibold dark:text-white text-light-text group-hover:text-green-400 transition-colors">
-                                        La Fed se reúne con incertidumbre que impregna el aire. Esto es lo que debe esperar
-                                    </p>
-                                    <div class="flex items-center mt-2">
-                                        <span class="text-xs text-green-400 mr-2">📈</span>
-                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Impacto: Alto</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <!-- Noticias del Mercado - Rediseñadas -->
+                <div class="lg:col-span-2 dark:bg-altum-card-bg bg-light-card rounded-lg shadow-md p-6 dark:border-altum-border border-light-border">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-semibold dark:text-white text-light-text">Noticias del Mercado</h3>
+                        <button class="text-xs font-medium dark:text-altum-text-secondary text-light-text-secondary hover:text-altum-accent transition-colors">
+                            Centro de Noticias
+                        </button>
+                    </div>
                     
-                    <!-- Noticia 2 - Geopolítica -->
-                    <a href="https://www.bbc.com/mundo/articles/c62z2k1qw91o" target="_blank" class="block group">
-                        <div class="bg-gradient-to-r from-red-500/10 to-transparent p-4 rounded-lg border-l-4 border-red-500 hover:from-red-500/20 transition-all">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center text-red-400 mr-4">
-                                    <i class="fas fa-exclamation-triangle text-sm"></i>
+                    <div class="space-y-4">
+                        <!-- Noticia Principal -->
+                        <div class="p-4 rounded-lg dark:bg-altum-dark-bg bg-light-bg border dark:border-altum-border border-light-border">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-xs font-medium dark:bg-altum-border bg-light-border px-2 py-1 rounded dark:text-altum-text-secondary text-light-text-secondary">FEDERAL RESERVE</span>
+                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 3h</span>
                                 </div>
-                                <div class="flex-1">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded-full font-medium">BBC</span>
-                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 1h</span>
-                                    </div>
-                                    <p class="text-sm font-semibold dark:text-white text-light-text group-hover:text-red-400 transition-colors">
-                                        India lanza un ataque con misiles contra Pakistán y escala las tensiones entre las dos potencias nucleares
-                                    </p>
-                                    <div class="flex items-center mt-2">
-                                        <span class="text-xs text-red-400 mr-2">⚠️</span>
-                                        <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Riesgo Geopolítico</span>
-                                    </div>
-                                </div>
+                                <span class="text-xs font-medium text-warning">ALTO IMPACTO</span>
                             </div>
+                            <h4 class="text-sm font-semibold dark:text-white text-light-text mb-2">
+                                La Fed se reúne con incertidumbre que impregna el aire. Esto es lo que debe esperar
+                            </h4>
+                            <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">
+                                Los mercados esperan señales sobre la política monetaria futura en medio de la incertidumbre económica global.
+                            </p>
                         </div>
-                    </a>
-
-                    <!-- Noticia 3 - Mercados -->
-                    <div class="bg-gradient-to-r from-blue-500/10 to-transparent p-4 rounded-lg border-l-4 border-blue-500">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center text-blue-400 mr-4">
-                                <i class="fas fa-coins text-sm"></i>
-                            </div>
-                            <div class="flex-1">
+                        
+                        <!-- Noticias Secundarias -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-3 rounded-lg dark:bg-altum-dark-bg bg-light-bg border dark:border-altum-border border-light-border">
                                 <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full font-medium">REUTERS</span>
-                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 2h</span>
+                                    <span class="text-xs font-medium dark:bg-altum-border bg-light-border px-2 py-1 rounded dark:text-altum-text-secondary text-light-text-secondary">GEOPOLÍTICA</span>
+                                    <span class="text-xs font-medium text-danger">RIESGO</span>
                                 </div>
-                                <p class="text-sm font-semibold dark:text-white text-light-text">
-                                    Oro alcanza máximos históricos ante incertidumbre global y debilidad del dólar
+                                <p class="text-xs font-medium dark:text-white text-light-text mb-1">
+                                    Tensiones geopolíticas escalan en Asia
                                 </p>
-                                <div class="flex items-center mt-2">
-                                    <span class="text-xs text-blue-400 mr-2">🥇</span>
-                                    <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Commodities</span>
+                                <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 1h</span>
+                            </div>
+                            
+                            <div class="p-3 rounded-lg dark:bg-altum-dark-bg bg-light-bg border dark:border-altum-border border-light-border">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-medium dark:bg-altum-border bg-light-border px-2 py-1 rounded dark:text-altum-text-secondary text-light-text-secondary">COMMODITIES</span>
+                                    <span class="text-xs font-medium text-success">POSITIVO</span>
                                 </div>
+                                <p class="text-xs font-medium dark:text-white text-light-text mb-1">
+                                    Oro alcanza máximos históricos
+                                </p>
+                                <span class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Hace 2h</span>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="mt-6 pt-4 border-t dark:border-altum-border border-light-border">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4 text-xs dark:text-altum-text-secondary text-light-text-secondary">
-                            <span class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                                Positivo
-                            </span>
-                            <span class="flex items-center">
-                                <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-                                Riesgo
-                            </span>
-                            <span class="flex items-center">
-                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-1"></div>
-                                Neutral
-                            </span>
+                    
+                    <!-- Indicadores de Mercado -->
+                    <div class="mt-6 pt-4 border-t dark:border-altum-border border-light-border">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">S&P 500</p>
+                                <p class="text-sm font-semibold dark:text-white text-light-text">4,567.89</p>
+                                <p class="text-xs text-success">+0.45%</p>
+                            </div>
+                            <div>
+                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">EUR/USD</p>
+                                <p class="text-sm font-semibold dark:text-white text-light-text">1.0892</p>
+                                <p class="text-xs text-danger">-0.12%</p>
+                            </div>
+                            <div>
+                                <p class="text-xs dark:text-altum-text-secondary text-light-text-secondary">Oro</p>
+                                <p class="text-sm font-semibold dark:text-white text-light-text">$2,045.67</p>
+                                <p class="text-xs text-success">+1.23%</p>
+                            </div>
                         </div>
-                        <a href="#" class="text-xs font-medium text-altum-accent hover:text-altum-accent-hover transition-colors">
-                            Centro de Noticias <i class="fas fa-arrow-right ml-1"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1275,6 +1230,39 @@
                 }
             },
             // Inversor 4 (Dipatermina)
+            {
+                id: 4,
+                username: "Dipatermina",
+                code: "109876543",
+                initialBalance: 1500.00,
+                balance: 1687.50,
+                deposits: 2,
+                withdrawals: 1,
+                status: "medium",
+                cuanto: 12.5,
+                maxLot: 0.08,
+                performance: 12.50,
+                balanceChange: "+12.5% este mes",
+                registrationDate: "2024-05-12",
+                lastActivity: "2025-06-26",
+                operations: [
+                    {
+                        date: "15/05/2025",
+                        operation: "Compra",
+                        session: "London",
+                        open: 1.08500,
+                        close: 1.08750,
+                        result: "Take Profit",
+                        observation: "EUR/USD - Lote: 0.08"
+                    }
+                ],
+                growthData: {
+                    '1M': [1500, 1550, 1600, 1650, 1687.50],
+                    '3M': [1400, 1450, 1500, 1550, 1600, 1650, 1687.50],
+                    '6M': [1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650, 1687.50],
+                    '1A': [1200, 1250, 1300, 1350, 1400, 1450, 1500, 1550, 1600, 1650, 1687.50]
+                }
+            },
           
             // Inversor 5 (Anfionez)
             {
@@ -1401,6 +1389,8 @@
                 maxLot: 0.03,
                 performance: 7.02,
                 balanceChange: "+7.02% este mes",
+                registrationDate: "2024-04-08",
+                lastActivity: "2025-06-23",
                 operations: [
                     {
                         date: "09/06/2025",
@@ -1442,6 +1432,8 @@
                 maxLot: 0.1,
                 performance: 14.22,
                 balanceChange: "+14.22% este mes",
+                registrationDate: "2024-06-03",
+                lastActivity: "2025-06-22",
                 operations: [
                     {
                         date: "30/04/2025",
