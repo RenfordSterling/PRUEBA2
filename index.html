@@ -251,12 +251,13 @@
         /* Estilos específicos para móviles */
         @media (max-width: 480px) {
             body {
-                padding: 10px;
+                padding: 20px;
             }
             
             .main-container {
-                max-width: 100%;
-                width: 100%;
+                max-width: calc(100% - 40px);
+                width: calc(100% - 40px);
+                margin: 20px;
             }
             
             .login-container {
@@ -317,6 +318,16 @@
         
         /* Estilos para pantallas muy pequeñas */
         @media (max-width: 360px) {
+            body {
+                padding: 15px;
+            }
+            
+            .main-container {
+                max-width: calc(100% - 30px);
+                width: calc(100% - 30px);
+                margin: 15px;
+            }
+            
             .login-container {
                 padding: 2rem 1.5rem;
             }
